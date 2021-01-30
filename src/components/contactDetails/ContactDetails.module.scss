@@ -1,0 +1,94 @@
+@import'../../assets/scss/settings.scss';
+.ContactDetails{
+      color: $grey04;
+      margin: 0 auto;
+      max-width: 600px;
+    .return {
+        border-bottom: 1px solid $grey04;
+        padding: 0 1rem;
+        display: flex;
+        a {
+            color: $grey04;
+            padding: 1rem 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            i {
+                font-size: 1.5rem;
+            }
+        }
+         .actionBtns {
+             width: 100%;
+             color: $grey04;
+             max-width: 100px;
+             display: flex;
+             align-items: center;
+             justify-content:space-evenly;
+             grid-area: actionBtns;
+             position: relative;
+             cursor: pointer;
+             i {
+                 @include transition;
+                 &:hover{
+                    color:$green01
+                 }
+             }
+         }
+    }
+    .outerInfoWrapper{
+        padding: 0 1rem;
+        .headerInfo{
+            display: flex;
+            border-bottom: 2px solid $green01;
+            padding: 1rem 0;
+            align-items: center;
+  .name {
+   //background-color: red;
+   font-size: 1.2rem;
+   width: 100%;
+  }
+  img {
+     
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+  }
+        }
+         .innerInfoWrapper {
+             display: flex;
+             flex-direction: column;
+             justify-content: flex-start;
+            max-width: 400px;
+            margin: 0 auto;
+             text-align: left;
+             padding: 0 2rem;
+             label {
+                 color: $green01;
+                 font-weight: bold;
+             }
+             .emailWrapper{
+                 margin:2rem 0;
+                 p{
+                       padding: 0 1rem;
+                 }
+             }
+             .numbersList{
+                 padding: 0 1rem;
+                 li{
+                    padding: 1rem 0;
+                     display: flex;
+                     justify-content: space-between;
+                     .label{
+                         text-transform: uppercase;
+                     }
+                     .number{
+                       //background-color: salmon;
+                         width: 50%;
+                         text-align: center;
+                         text-decoration: underline;
+                     }
+                 }
+             }
+         }
+    }
+}

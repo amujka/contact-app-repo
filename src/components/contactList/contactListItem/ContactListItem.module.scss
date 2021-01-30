@@ -1,0 +1,47 @@
+@import'../../../assets/scss/settings.scss';
+.ContactListItem {
+    border: solid 1px $grey04;
+    margin: 10px 0;
+    padding: 5px 10px;
+    display: grid;
+    grid-template-areas: "link link link actionBtns ";
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 5px;
+    @include transition;
+    a {
+        grid-area: link;
+        width: 100%;
+        display: block;
+        text-align: left;
+        display: flex;
+        align-items: center;
+img {
+    width: 45px;
+    height: 45px;
+    border: solid 3px $grey04;
+    border-radius: 50%;
+}
+        p {
+     margin-left: 1rem;
+            color: $grey04;
+        }
+    }
+    .actionBtns {
+        color: $grey04;
+        max-width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-area: actionBtns;
+        position: relative;
+          cursor: pointer;
+       i{
+            @include transition;
+            &:hover{
+                color: $green01
+            }
+       }
+    }
+//MEDIA QUERIES-------------------------------------------
+   @import'ContactListItemMQ.module';
+}

@@ -1,0 +1,47 @@
+//MEDIA QUERIES-------------------------------------------
+@include min-screen(500px) {
+    margin: 0;
+    padding: 10px;
+    grid-template-areas:
+        "actionBtns "
+        "link";
+    grid-template-columns: repeat(1, 1fr);
+    &:hover {
+        border-color: $green01;
+        .actionBtns {
+            i {
+                opacity: 1;
+            }
+        }
+    }
+    a {
+        flex-direction: column;
+        text-align: center;
+        font-weight: bold;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+       p{
+               margin: 10px 0;
+       }
+    }
+    .actionBtns {
+       
+        max-width: 100%;
+      
+        justify-content: flex-end;
+        i {
+            margin-left: 1rem;
+            opacity: 0;
+         
+        }
+        i:first-child {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: 0;
+            opacity: 1;
+        }
+    }
+}

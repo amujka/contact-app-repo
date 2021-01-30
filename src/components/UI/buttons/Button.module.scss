@@ -1,0 +1,19 @@
+@import'../../../assets/scss/settings.scss';
+button{
+width: calc(50% - 5px);
+max-width: 160px;
+height: 42px;
+border-radius: 9999px;
+padding:5px 1rem;
+margin: 5px ;
+border: none;
+cursor: pointer;
+}
+.isGreen{
+    background-color: $green03;
+    color: $grey04;
+}
+.isGray{
+     background-color: $grey04;
+     color: $green03;
+}

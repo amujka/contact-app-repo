@@ -1,0 +1,18 @@
+@import '../../assets/scss/settings.scss';
+.header{
+    width: 100%;
+    background-color: $green01;
+    padding: 10px 0;
+    position: relative;
+    color: #ffffff;
+    
+    &::after{
+        content: "";
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 7px;
+        background-color: lighten($green01,12)
+    }
+}
