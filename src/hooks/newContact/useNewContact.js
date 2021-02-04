@@ -5,6 +5,7 @@ const useNewContact = (addNewContact) => {
     fullname: "",
     email: "",
     numbers: [{ label: "", number: "" }],
+    isFavorite: false,
   });
   // const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,6 +55,7 @@ const useNewContact = (addNewContact) => {
         fullname: "",
         email: "",
         numbers: [{ label: "", number: "" }],
+        isFavorite: false,
       });
     }
   }, [isSubmitting]);

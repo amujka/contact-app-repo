@@ -11,7 +11,10 @@ const ContactDetails = ({ contact }) => {
           <i className="fas fa-long-arrow-alt-left"> </i>
         </NavLink>
         <div className={classes.actionBtns}>
-          <i className="far fa-heart"></i>
+          <i
+            className="far fa-heart"
+            style={contact.isFavorite ? { color: "red" } : null}
+          ></i>
           <i className="fas fa-edit"></i>
         </div>
       </div>

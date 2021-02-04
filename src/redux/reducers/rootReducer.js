@@ -1,4 +1,8 @@
-import { ADD_NEW_CONTACT, DELETE_CONTACT } from "../actions/actionTypes";
+import {
+  ADD_NEW_CONTACT,
+  DELETE_CONTACT,
+  ADD_CONTACT_TO_FAV,
+} from "../actions/actionTypes";
 import avatar from "./avatar.jpg";
 const initState = {
   contacts: [
@@ -13,6 +17,7 @@ const initState = {
         { label: "work", number: "091502125134" },
         { label: "job", number: "09151234" },
       ],
+      isFavorite: true,
     },
   ],
 };
@@ -26,6 +31,18 @@ const rootReducer = (state = initState, action) => {
         contacts: state.contacts.filter(
           (contact) => contact.id !== action.payload
         ),
+      };
+
+    case ADD_CONTACT_TO_FAV:
+      let favorite = state.contacts.map((contact) => {
+        if (contact.id === action.payload) {
+          contact.isFavorite = !contact.isFavorite;
+        }
+        return contact;
+      });
+      return {
+        ...state,
+        contacts: favorite,
       };
     default:
       return state;

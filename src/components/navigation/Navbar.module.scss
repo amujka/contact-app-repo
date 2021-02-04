@@ -1,0 +1,24 @@
+@import'../../assets/scss/settings.scss';
+.Navbar {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid $green02;
+    padding: 1rem;
+    margin: 0 auto;
+    div {
+        width: 90%;
+        max-width: 150px;
+        a {
+            text-decoration: none;
+            color: $grey03;
+            &.active {
+                color: $green03;
+            }
+        }
+    }
+    span {
+        color: $grey03
+    }
+}

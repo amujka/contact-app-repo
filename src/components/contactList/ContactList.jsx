@@ -4,6 +4,7 @@ import ContactListItem from "./contactListItem/ContactListItem";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../UI/searchBar/SearchBar";
 import { useState } from "react";
+import Navbar from "../navigation/Navbar";
 const ContactList = ({ contacts }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const findContact = (term) => {
@@ -12,6 +13,7 @@ const ContactList = ({ contacts }) => {
 
   return (
     <div className={classes.contactList}>
+      <Navbar />
       <SearchBar contacts={contacts} findContact={findContact} />
       <div className={classes.contactListWrapper}>
         <div className={classes.addContact}>
