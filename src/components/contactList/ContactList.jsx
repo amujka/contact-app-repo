@@ -1,12 +1,13 @@
 import classes from "./ContactList.module.scss";
 import { connect } from "react-redux";
-import ContactListItem from "./contactListItem/ContactListItem";
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import ContactListItem from "./contactListItem/ContactListItem";
 import SearchBar from "../UI/searchBar/SearchBar";
-import { useState } from "react";
 import Navbar from "../navigation/Navbar";
 const ContactList = ({ contacts }) => {
   const [searchTerm, setSearchTerm] = useState("");
+
   const findContact = (term) => {
     setSearchTerm(term);
   };
@@ -42,5 +43,4 @@ const ContactList = ({ contacts }) => {
 const mapStateToProps = (state) => {
   return { contacts: state.contacts };
 };
-
 export default connect(mapStateToProps)(ContactList);

@@ -3,7 +3,7 @@ import "./Footer.module.scss";
 const Footer = () => {
   return (
     <footer>
-      <h3>Copyright Alen Mujkanovic &trade;</h3>
+      <h3>By Alen Mujkanovic &trade;</h3>
     </footer>
   );
 };

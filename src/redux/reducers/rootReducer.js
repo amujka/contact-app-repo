@@ -19,6 +19,19 @@ const initState = {
       ],
       isFavorite: true,
     },
+    {
+      id: "2",
+      avatar: avatar,
+      fullname: "Goran Savic",
+      email: "gogo@gmail.com",
+      numbers: [
+        { label: "home", number: "123456" },
+        { label: "phone", number: "0991523215" },
+        { label: "work", number: "09150225134" },
+        { label: "job", number: "09151234" },
+      ],
+      isFavorite: false,
+    },
   ],
 };
 const rootReducer = (state = initState, action) => {
