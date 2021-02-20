@@ -44,6 +44,16 @@
                     color: $grey02;
                 }
             }
+              .error {
+                  border-color: $red01;
+              
+              }
+              .errorMsg{
+                  color: $red01;
+                  padding: 10px 0;
+                 
+              }
+              }
             ul {
                 list-style: none;
                 width: 100%;
@@ -51,6 +61,8 @@
                     width: 100%;
                     input {
                         margin-bottom: 10px;
+
+                       
                     }
                     .deleteNumberWrapper {
                         display: flex;
@@ -88,4 +100,4 @@
             }
         }
     }
-}
+

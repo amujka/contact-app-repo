@@ -9,13 +9,14 @@ import { connect } from "react-redux";
 const NewContact = ({ history, addNewContact }) => {
   const {
     newContact,
+    errors,
     handleInput,
     addNumInput,
     handleNumInput,
     handleSubmit,
     deleteNumInput,
   } = useNewContact(addNewContact);
-  console.log(newContact);
+  //console.log({ errors });
   return (
     <div className={classes.NewContact}>
       <div className={classes.return}>
@@ -35,9 +36,13 @@ const NewContact = ({ history, addNewContact }) => {
             type="text"
             value={newContact.fullname}
             name="fullname"
-            placeholder="full name"
+            className={errors.fullname ? classes.error : null}
+            placeholder={errors.fullname ? `${errors.fullname}` : "Full name"}
             onChange={(e) => handleInput(e)}
           />
+          {errors.fullname && (
+            <p className={classes.errorMsg}>{errors.fullname}</p>
+          )}
         </div>
         <div className={classes.inputWrapper}>
           <label htmlFor="">
@@ -45,11 +50,13 @@ const NewContact = ({ history, addNewContact }) => {
           </label>
           <input
             type="email"
+            className={errors.email ? classes.error : null}
             placeholder="email"
             name="email"
             onChange={(e) => handleInput(e)}
             value={newContact.email}
           />
+          {errors.email && <p className={classes.errorMsg}>{errors.email}</p>}
         </div>
         <div className={classes.inputWrapper}>
           <label htmlFor="">
@@ -62,9 +69,9 @@ const NewContact = ({ history, addNewContact }) => {
                   key={i}
                   index={i}
                   value={item}
-                  newContact={newContact}
                   deleteNumInput={deleteNumInput}
                   handleNumInput={handleNumInput}
+                  errors={errors.numbers}
                 />
               );
             })}

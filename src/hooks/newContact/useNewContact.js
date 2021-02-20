@@ -1,4 +1,6 @@
+//custom hook for adding new contact
 import { useEffect, useState } from "react";
+import { validateForm } from "./validateForm";
 const useNewContact = (addNewContact) => {
   const [newContact, setNewContact] = useState({
     avatar: "",
@@ -7,7 +9,7 @@ const useNewContact = (addNewContact) => {
     numbers: [{ label: "", number: "" }],
     isFavorite: false,
   });
-  // const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   //HANDLE INPUT-----------------------------------
   const handleInput = (e) => {
@@ -21,7 +23,7 @@ const useNewContact = (addNewContact) => {
       [name]: value,
     });
   };
-  //ADD NUMBERS INPUT-----------------------------------
+  //ADD MORE NUMBER INPUTS-----------------------------------
   const addNumInput = () => {
     let newNumInput = [...newContact.numbers, { label: "", number: "" }];
     setNewContact({ ...newContact, numbers: newNumInput });
@@ -43,12 +45,13 @@ const useNewContact = (addNewContact) => {
   //HANDLE SUBMIT--------------------------------
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrors(validateForm(newContact));
     let id = Math.random().toString();
     setNewContact({ ...newContact, id });
     setIsSubmitting(true);
   };
   useEffect(() => {
-    if (isSubmitting) {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
       addNewContact(newContact);
       setNewContact({
         avatar: "",
@@ -58,11 +61,11 @@ const useNewContact = (addNewContact) => {
         isFavorite: false,
       });
     }
-  }, [isSubmitting]);
+  }, [errors]);
 
   return {
     newContact,
-    // errors,
+    errors,
     handleInput,
     addNumInput,
     handleNumInput,

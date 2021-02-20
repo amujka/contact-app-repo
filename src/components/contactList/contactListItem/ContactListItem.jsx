@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import classes from "./ContactListItem.module.scss";
-import { deleteContactAction } from "../../../redux/actions/deleteContactAction";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+import { deleteContactAction } from "../../../redux/actions/deleteContactAction";
 import { addContactToFav } from "../../../redux/actions/addContactToFav";
 const ContactListItem = ({ contact, deleteContact, addContactToFav }) => {
   const [colors, setcolor] = useState("grey");
@@ -11,7 +11,6 @@ const ContactListItem = ({ contact, deleteContact, addContactToFav }) => {
     contact.isFavorite ? setcolor("red") : setcolor("grey");
   };
   useEffect(() => {
-    console.log(contact.isFavorite);
     contact.isFavorite ? setcolor("red") : setcolor("grey");
   }, [contact.isFavorite]);
   return (
@@ -35,7 +34,6 @@ const ContactListItem = ({ contact, deleteContact, addContactToFav }) => {
     </div>
   );
 };
-
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteContact: (id) => {

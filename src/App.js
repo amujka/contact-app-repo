@@ -6,6 +6,7 @@ import ContactList from "./components/contactList/ContactList";
 import NewContact from "./components/newContact/NewContact";
 import ContactDetails from "./components/contactDetails/ContactDetails";
 import Favorites from "./components/favorites/Favorites";
+import EditContact from "./components/editContact/EditContact";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path={"/"} component={ContactList} />
           <Route path={"/favorites"} component={Favorites} />
           <Route path={"/newContact"} component={NewContact} />
+          <Route path={"/editContact/:fullname"} component={EditContact} />
           <Route path={"/:fullname"} component={ContactDetails} />
         </Switch>
       </div>
